@@ -1,3 +1,5 @@
+import { apiKey } from "./getLocation";
+
 const app = document.querySelector(".weather-app");
 const temp = document.querySelector(".temp");
 const dateOutput = document.querySelector(".date");
@@ -47,7 +49,7 @@ function nameOfMonth(day, month, year) {
 function fetchWeatherData() {
     app.style.opacity = "0";
     axios
-    .get(`http://api.weatherapi.com/v1/current.json?key=dc36201baf97449c863104656220502&q=${cityInput}`)
+    .get(`http://api.weatherapi.com/v1/current.json?key=${apiKey}=${cityInput}`)
     .then(res => res.data)
     .then(data => {
         console.log(data);
